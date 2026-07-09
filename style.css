@@ -110,7 +110,7 @@ h1, h2 { font-family: var(--font-display); font-weight: 700; line-height: 1.1; }
   align-items: center;
 }
 .navbar__logo-img {
-  height: 48px;
+  height: 30px;
   width: auto;
 }
 
@@ -132,7 +132,7 @@ h1, h2 { font-family: var(--font-display); font-weight: 700; line-height: 1.1; }
   font-weight: 500;
   border-bottom: 1px solid rgba(26,26,26,0.08);
 }
-.navbar__give { color: var(--magenta); font-weight: 700; }
+.navbar__give { color: var(--blue-dark); font-weight: 700; }
 
 .navbar__signin {
   background: var(--blue);
