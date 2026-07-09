@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>charity: water | Skip the Coffee, Send Water</title>
+  <meta name="description" content="Join a generation turning spare change into clean water. 100% of your donation, tracked to the source." />
+
+  <!-- Adobe Fonts (Typekit): Proxima Nova -->
+  <link rel="stylesheet" href="https://use.typekit.net/uny1hzn.css">
+
+  <!-- Google Font fallback: Work Sans loads only if Typekit is unavailable -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- =========================================
+       NAVBAR
+  ========================================== -->
+  <header class="navbar">
+    <div class="navbar__inner">
+      <a href="#" class="navbar__logo">
+        <!-- #LOGO: Upload the charity: water logo into your img folder as "charity-water-logo.png"
+             (or update the filename below to match whatever you named it). -->
+        <img src="img/charity-water-logo.png" alt="charity: water logo" class="navbar__logo-img" />
+      </a>
+
+      <nav class="navbar__links" id="primary-nav">
+        <a href="#story">Take Action</a>
+        <a href="#impact">Our Work</a>
+        <a href="#give" class="navbar__give">Send Water</a>
+        <a href="#" class="navbar__signin">Sign In</a>
+      </nav>
+
+      <button class="navbar__toggler" id="navToggler" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- =========================================
+       HERO
+  ========================================== -->
+  <section class="hero">
+    <div class="hero__text">
+      <p class="eyebrow">Join the movement for clean water</p>
+      <h1 class="hero__headline">Your coffee money could end someone's water crisis.</h1>
+      <p class="hero__subheadline">Join a generation turning spare change into clean water. 100% of your donation, tracked to the source.</p>
+      <a href="#give" class="btn btn--primary">Skip the Coffee, Send Water</a>
+    </div>
+
+    <!-- Arched photo triptych — mirrors the arch motif from the original Canva concept -->
+    <div class="hero__arches" aria-hidden="false">
+      <div class="arch">
+        <!-- #IMAGE-1: Replace src below with your own photo.
+             1. Upload your image file into the /img folder in your Codespace (drag and drop, or use the file explorer).
+             2. Update the src path to match your filename, e.g. src="img/woman-carrying-water.jpg"
+             3. Keep alt text descriptive for accessibility. -->
+        <img src="img/placeholder-1.jpg" alt="Person carrying a water vessel" />
+      </div>
+      <div class="arch">
+        <!-- #IMAGE-2: Replace src below with your own photo (see instructions above). -->
+        <img src="img/placeholder-2.jpg" alt="Water well surrounded by flowers" />
+      </div>
+      <div class="arch">
+        <!-- #IMAGE-3: Replace src below with your own photo (see instructions above). -->
+        <img src="img/placeholder-3.jpg" alt="Students in a classroom" />
+      </div>
+    </div>
+
+    <!-- Water-motif divider -->
+    <svg class="wave-divider" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,40 L1440,80 L0,80 Z"></path>
+    </svg>
+  </section>
+
+  <!-- =========================================
+       STORY / WHY IT MATTERS
+  ========================================== -->
+  <section class="story" id="story">
+    <div class="story__inner reveal">
+      <h2>771 million people don't have clean water nearby.</h2>
+      <p>That's roughly 1 in 10 people on the planet, walking miles a day just to collect water that might make them sick. Meanwhile, most of us spend more on a latte than it costs to change that. charity: water works with local partners to build wells, pumps, and pipelines, then publishes GPS data and photos so you can see exactly what your donation built.</p>
+    </div>
+  </section>
+
+  <!-- =========================================
+       IMPACT STATS
+  ========================================== -->
+  <section class="impact" id="impact">
+    <div class="impact__grid">
+      <div class="impact__stat reveal">
+        <span class="impact__number">100%</span>
+        <span class="impact__label">of public donations fund clean water projects directly</span>
+      </div>
+      <div class="impact__stat reveal">
+        <span class="impact__number">17.6M+</span>
+        <span class="impact__label">people reached with clean water so far</span>
+      </div>
+      <div class="impact__stat reveal">
+        <span class="impact__number">$1 = 1 week</span>
+        <span class="impact__label">roughly what it costs to give someone clean water for a week</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       IMAGE GALLERY (student-facing / campus content)
+  ========================================== -->
+  <section class="gallery" id="gallery">
+    <h2 class="reveal">See what your generation is building</h2>
+    <div class="gallery__grid">
+      <div class="gallery__item reveal">
+        <!-- #IMAGE-4: Upload a photo into /img, then update the src below.
+             Suggested: a real photo of student fundraising, a campus event, or a project site. -->
+        <img src="img/placeholder-4.jpg" alt="Campus fundraiser for clean water" />
+      </div>
+      <div class="gallery__item reveal">
+        <!-- #IMAGE-5: Upload a photo into /img, then update the src below. -->
+        <img src="img/placeholder-5.jpg" alt="Volunteers packing water filters" />
+      </div>
+      <div class="gallery__item reveal">
+        <!-- #IMAGE-6: Upload a photo into /img, then update the src below. -->
+        <img src="img/placeholder-6.jpg" alt="Community celebrating a new well" />
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       CTA / DONATE BANNER
+  ========================================== -->
+  <section class="give" id="give">
+    <h2>Ready to skip the coffee?</h2>
+    <p>Every donation is tracked with GPS to the exact project it funds. No guesswork, just clean water.</p>
+    <a href="#" class="btn btn--secondary">Donate Now</a>
+  </section>
+
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
+  <footer class="footer">
+    <p class="footer__logo">charity<span>:</span> water</p>
+    <div class="footer__links">
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">Contact Us</a>
+    </div>
+    <p class="footer__copy">&copy; 2026 charity: water. Built by a Digital Marketing Associate in training.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

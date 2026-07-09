@@ -1,0 +1,351 @@
+/* ==========================================================
+   TOKENS — derived from charity: water brand guidelines
+   Cream #FFFEF1, Black #1A1A1A, Blue #77A8BB
+   Extra shades below are tints/shades of those three, not new colors.
+========================================================== */
+:root {
+  --cream: #FFFEF1;
+  --cream-white: #FFFFFF;
+  --black: #1A1A1A;
+  --blue: #77A8BB;
+  --blue-dark: #4D7A8C;   /* shade of brand blue, used for hover/depth */
+  --blue-light: #E9F1F3;  /* tint of brand blue, used for section backgrounds */
+  --yellow: #FFC907;      /* charity: water signature yellow, Pantone 108 U */
+  --yellow-dark: #E6B400; /* shade of the signature yellow, used for hover */
+  --magenta: #9C064D;     /* sampled from your reference swatch */
+
+  --font-display: proxima-nova, 'Work Sans', sans-serif;
+  --font-body: proxima-nova, 'Work Sans', sans-serif;
+
+  --radius-arch: 140px 140px 0 0;
+  --container: 1120px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--black);
+  background: var(--cream);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; /* prevents a horizontal scrollbar from the full-bleed wave divider */
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+h1, h2 { font-family: var(--font-display); font-weight: 700; line-height: 1.1; }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.9rem 1.75rem;
+  border-radius: 999px;
+  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+.btn--primary {
+  background: var(--black);
+  color: var(--cream);
+}
+.btn--primary:hover,
+.btn--primary:focus-visible {
+  background: var(--blue-dark);
+  transform: translateY(-2px);
+}
+.btn--secondary {
+  background: var(--yellow);
+  color: var(--black);
+  border: 2px solid var(--yellow);
+}
+.btn--secondary:hover,
+.btn--secondary:focus-visible {
+  background: var(--yellow-dark);
+  border-color: var(--yellow-dark);
+  transform: translateY(-2px);
+}
+:focus-visible { outline: 2px solid var(--blue-dark); outline-offset: 3px; }
+
+/* ==========================================================
+   NAVBAR
+========================================================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--yellow);
+  border-bottom: 1px solid rgba(26,26,26,0.08);
+}
+.navbar__inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar__logo {
+  display: flex;
+  align-items: center;
+}
+.navbar__logo-img {
+  height: 48px;
+  width: auto;
+}
+
+.navbar__links {
+  position: fixed;
+  inset: 0;
+  top: 64px;
+  background: var(--cream);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 1rem 1.25rem;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+.navbar__links.is-open { transform: translateX(0); }
+.navbar__links a {
+  padding: 1rem 0;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(26,26,26,0.08);
+}
+.navbar__give { color: var(--magenta); font-weight: 700; }
+
+.navbar__signin {
+  background: var(--blue);
+  color: var(--cream-white);
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem !important;
+  text-align: center;
+  font-weight: 600;
+}
+.navbar__signin:hover,
+.navbar__signin:focus-visible {
+  background: var(--blue-dark);
+}
+
+.navbar__toggler {
+  background: none;
+  border: none;
+  width: 32px;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 60;
+}
+.navbar__toggler span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--black);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.navbar__toggler[aria-expanded="true"] span:nth-child(1) { transform: translateY(11px) rotate(45deg); }
+.navbar__toggler[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.navbar__toggler[aria-expanded="true"] span:nth-child(3) { transform: translateY(-11px) rotate(-45deg); }
+
+@media (min-width: 768px) {
+  .navbar__toggler { display: none; }
+  .navbar__links {
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    padding: 0;
+    background: none;
+    transform: none;
+  }
+  .navbar__links a { border-bottom: none; padding: 0; }
+}
+
+/* ==========================================================
+   HERO
+========================================================== */
+.hero {
+  position: relative;
+  padding: 3rem 1.25rem 0;
+  max-width: var(--container);
+  margin: 0 auto;
+  text-align: center;
+}
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue-dark);
+  margin-bottom: 1rem;
+}
+.hero__headline {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  max-width: 18ch;
+  margin: 0 auto 1.25rem;
+}
+.hero__subheadline {
+  font-size: 1.05rem;
+  color: #444;
+  max-width: 42ch;
+  margin: 0 auto 2rem;
+}
+
+.hero__arches {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+  max-width: 780px;
+  margin: 0 auto;
+}
+.arch {
+  aspect-ratio: 3 / 4.3;
+  overflow: hidden;
+  border-radius: var(--radius-arch);
+  background: var(--blue-light);
+}
+.arch img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wave-divider {
+  display: block;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  height: 48px;
+  margin-top: 2rem;
+}
+.wave-divider path { fill: var(--blue-light); }
+
+/* ==========================================================
+   STORY
+========================================================== */
+.story {
+  background: var(--blue-light);
+  padding: 3.5rem 1.25rem;
+}
+.story__inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+.story h2 {
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  margin-bottom: 1rem;
+}
+.story p { color: #333; font-size: 1rem; }
+
+/* ==========================================================
+   IMPACT STATS
+========================================================== */
+.impact { padding: 3.5rem 1.25rem; max-width: var(--container); margin: 0 auto; }
+.impact__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  text-align: center;
+}
+.impact__stat { display: flex; flex-direction: column; gap: 0.4rem; }
+.impact__number {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 2.4rem;
+  color: var(--blue-dark);
+}
+.impact__label { font-size: 0.9rem; color: #444; max-width: 24ch; margin: 0 auto; }
+
+@media (min-width: 768px) {
+  .impact__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ==========================================================
+   GALLERY
+========================================================== */
+.gallery { padding: 3.5rem 1.25rem; max-width: var(--container); margin: 0 auto; text-align: center; }
+.gallery h2 { font-size: clamp(1.5rem, 4vw, 2.1rem); margin-bottom: 2rem; }
+.gallery__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.gallery__item {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--blue-light);
+}
+.gallery__item img { width: 100%; height: 100%; object-fit: cover; }
+
+@media (min-width: 768px) {
+  .gallery__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ==========================================================
+   GIVE / CTA BANNER
+========================================================== */
+.give {
+  background: var(--black);
+  color: var(--cream);
+  text-align: center;
+  padding: 4rem 1.25rem;
+}
+.give h2 {
+  font-size: clamp(1.6rem, 4vw, 2.3rem);
+  margin-bottom: 0.75rem;
+}
+.give p {
+  max-width: 40ch;
+  margin: 0 auto 1.75rem;
+  color: rgba(255,254,241,0.75);
+}
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+.footer {
+  padding: 2.5rem 1.25rem;
+  text-align: center;
+  border-top: 1px solid rgba(26,26,26,0.08);
+}
+.footer__logo {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.footer__logo span { color: var(--blue-dark); }
+.footer__links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+.footer__copy { font-size: 0.8rem; color: #666; }
